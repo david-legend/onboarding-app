@@ -5,7 +5,6 @@ import 'package:onboardingapp/values/values.dart';
 import 'package:onboardingapp/widgets/custom_button.dart';
 import 'package:onboardingapp/widgets/custom_text_form_field.dart';
 import 'package:onboardingapp/widgets/spaces.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override
@@ -14,6 +13,7 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   bool hasSuffixIcon = false;
+  String phoneNumber = "+ (1) 555 678 2810";
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
   Widget _buildCodeCard() {
     final _UsNumberTextInputFormatter _phoneNumberFormatter =
-    _UsNumberTextInputFormatter();
+        _UsNumberTextInputFormatter();
     var textTheme = Theme.of(context).textTheme;
 
     return Container(
@@ -135,8 +135,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
               CustomButton(
                 title: StringConst.GET_CODE,
-                onPressed: () =>
-                    Router.navigator.pushNamed(Routes.registerScreen),
+                onPressed: () => Router.navigator.pushNamed(
+                  Routes.verificationScreen,
+                  arguments: VerificationScreenArguments(
+                    phoneNumber: this.phoneNumber,
+                  ),
+                ),
                 textStyle: textTheme.button,
               ),
             ],
@@ -150,6 +154,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     if (value.length == 14) {
       setState(() {
         hasSuffixIcon = true;
+        phoneNumber = "+1 " + value;
       });
     } else {
       setState(() {
@@ -165,17 +170,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     }
     return null;
   }
-
 }
-
 
 /// Format incoming numeric text to fit the format of (###) ###-#### ##
 class _UsNumberTextInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue,
-      TextEditingValue newValue,
-      ) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     final newTextLength = newValue.text.length;
     final newText = StringBuffer();
     var selectionIndex = newValue.selection.end;

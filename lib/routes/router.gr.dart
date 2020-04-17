@@ -9,10 +9,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:onboardingapp/screens/welcome_screen.dart';
 import 'package:onboardingapp/screens/registration_screen.dart';
+import 'package:onboardingapp/screens/verification_screen.dart';
+import 'package:onboardingapp/screens/fingerprint_screen.dart';
 
 abstract class Routes {
   static const welcomeScreen = '/';
   static const registerScreen = '/register-screen';
+  static const verificationScreen = '/verification-screen';
+  static const fingerprintScreen = '/fingerprint-screen';
 }
 
 class Router extends RouterBase {
@@ -35,8 +39,34 @@ class Router extends RouterBase {
           builder: (_) => RegistrationScreen(),
           settings: settings,
         );
+      case Routes.verificationScreen:
+        if (hasInvalidArgs<VerificationScreenArguments>(args,
+            isRequired: true)) {
+          return misTypedArgsRoute<VerificationScreenArguments>(args);
+        }
+        final typedArgs = args as VerificationScreenArguments;
+        return MaterialPageRoute<dynamic>(
+          builder: (_) =>
+              VerificationScreen(phoneNumber: typedArgs.phoneNumber),
+          settings: settings,
+        );
+      case Routes.fingerprintScreen:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => FingerprintScreen(),
+          settings: settings,
+        );
       default:
         return unknownRoutePage(settings.name);
     }
   }
+}
+
+//**************************************************************************
+// Arguments holder classes
+//***************************************************************************
+
+//VerificationScreen arguments holder class
+class VerificationScreenArguments {
+  final String phoneNumber;
+  VerificationScreenArguments({@required this.phoneNumber});
 }

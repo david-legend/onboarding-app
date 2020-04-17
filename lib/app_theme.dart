@@ -18,7 +18,7 @@ class OnBoardingAppThemeData {
       scaffoldBackgroundColor: colorScheme.background,
       highlightColor: Colors.transparent,
       accentColor: colorScheme.primary,
-      focusColor: focusColor,
+      focusColor: AppColors.violetShade1,
     );
   }
 
