@@ -2,15 +2,21 @@ part of values;
 
 class Gradients {
   static const Gradient primaryGradient = LinearGradient(
-    begin: Alignment(0.5, 1),
-    end: Alignment(0.51711, -0.06443),
-    stops: [
-      0,
-      1,
-    ],
+    begin: Alignment.topRight,
+    end: Alignment.bottomRight,
+//    stops: [
+//      0,
+//      1,
+//    ],
     colors: [
-      Color.fromARGB(0, 255, 255, 255),
-      Color.fromARGB(66, 0, 0, 0),
+
+      Color(0xFFF6F6F9),
+      Color(0xFFFCFCFD),
+      Color(0xEEEDF5B5),
+      Color(0xFFFEFEFE),
+      Color(0xF0EFF6BF),
+      Color(0xFFFFFFFF),
+
     ],
   );
 

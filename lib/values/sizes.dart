@@ -22,6 +22,7 @@ class Sizes {
   static const double TEXT_SIZE_36 = 36.0;
   static const double TEXT_SIZE_32 = 32.0;
   static const double TEXT_SIZE_28 = 28.0;
+  static const double TEXT_SIZE_24 = 24.0;
   static const double TEXT_SIZE_22 = 22.0;
   static const double TEXT_SIZE_20 = 20.0;
   static const double TEXT_SIZE_18 = 18.0;
@@ -162,5 +163,6 @@ class Sizes {
   static const double ELEVATION_6 = 6.0;
   static const double ELEVATION_4 = 4.0;
   static const double ELEVATION_2 = 2.0;
+  static const double ELEVATION_1 = 1.0;
   static const double ELEVATION_0 = 0.0;
 }

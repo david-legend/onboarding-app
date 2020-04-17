@@ -1,12 +1,12 @@
-
 part of values;
 
-
 class Borders {
-  static const BorderSide primaryBorder = BorderSide(
-    color: Color.fromARGB(255, 112, 112, 112),
-    width: 0.33333,
-    style: BorderStyle.solid,
-  );
+  static const BorderSide defaultPrimaryBorder =
+      BorderSide(width: Sizes.WIDTH_0, style: BorderStyle.none);
 
+  static const BorderSide primaryBorder = BorderSide(
+    width: Sizes.WIDTH_1,
+    style: BorderStyle.solid,
+    color: AppColors.violetShade1,
+  );
 }
