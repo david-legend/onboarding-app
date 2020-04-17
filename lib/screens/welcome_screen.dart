@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onboardingapp/routes/router.gr.dart';
 import 'package:onboardingapp/values/values.dart';
 import 'package:onboardingapp/widgets/custom_button.dart';
 import 'package:onboardingapp/widgets/spaces.dart';
@@ -16,7 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   void initState() {
     super.initState();
-    currentIndexPage = 2;
+    currentIndexPage = 0;
     pageLength = 3;
   }
 
@@ -35,9 +36,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 height: heightOfScreen * 0.6,
                 child: PageView(
                   children: <Widget>[
-                    _buildWalkThrough(imageUrl: ImagePath.astronaut),
-                    _buildWalkThrough(imageUrl: ImagePath.astronaut),
-                    _buildWalkThrough(imageUrl: ImagePath.astronaut),
+                    _buildWalkThrough(imageUrl: ImagePath.ASTRONAUT),
+                    _buildWalkThrough(imageUrl: ImagePath.ASTRONAUT),
+                    _buildWalkThrough(imageUrl: ImagePath.ASTRONAUT),
                   ],
                   onPageChanged: (value) {
                     setState(() => currentIndexPage = value.toDouble());
@@ -76,12 +77,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       child: Stack(
         children: <Widget>[
           Image.asset(
-            ImagePath.twinkle,
+            ImagePath.TWINKLE,
             width: widthOfScreen,
             height: heightOfScreen * 0.4,
           ),
           Container(
-            height: heightOfScreen * 0.7,
+            height: heightOfScreen * 0.6,
             child: Column(
               children: <Widget>[
                 Image.asset(
@@ -131,7 +132,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         children: <Widget>[
           CustomButton(
             title: StringConst.CREATE_ACCOUNT,
-            onPressed: () {},
+            onPressed: () => Router.navigator.pushNamed(Routes.registerScreen),
             textStyle: textTheme.button,
           ),
           SpaceH30(),
@@ -140,7 +141,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             textStyle: textTheme.button.copyWith(color: AppColors.violetShade1),
             color: AppColors.white,
             borderSide: Borders.primaryBorder,
-            onPressed: () {},
+            onPressed: () => Router.navigator.pushNamed(Routes.registerScreen),
           ),
         ],
       ),

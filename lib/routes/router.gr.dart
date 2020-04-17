@@ -8,9 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:onboardingapp/screens/welcome_screen.dart';
+import 'package:onboardingapp/screens/registration_screen.dart';
 
 abstract class Routes {
   static const welcomeScreen = '/';
+  static const registerScreen = '/register-screen';
 }
 
 class Router extends RouterBase {
@@ -26,6 +28,11 @@ class Router extends RouterBase {
       case Routes.welcomeScreen:
         return MaterialPageRoute<dynamic>(
           builder: (_) => WelcomeScreen(),
+          settings: settings,
+        );
+      case Routes.registerScreen:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => RegistrationScreen(),
           settings: settings,
         );
       default:
