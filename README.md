@@ -1,16 +1,37 @@
-# onboardingapp
 
-A new Flutter application.
+Built with flutter
 
-## Getting Started
+## Onboarding App
 
-This project is a starting point for a Flutter application.
+Beautifully crafted with flutter and love, a useful UI Kit for developers and designers 
+who want to kick start their app with a beautiful onboarding screen.
 
-A few resources to get you started if this is your first Flutter project:
+Find actual designs at (https://www.behance.net/gallery/87302761/Onboarding-Screens-Free?tracking_source=search_projects_recommended%7COnboarding%20screens%20free)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### OnBoarding Initial Screens
+![Screenshot](assets/screenshots/onboard_1.png)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## OnBoarding Final Screens
+![Screenshot](assets/screenshots/onboard_2.png )
+
+## All Screens
+![Screenshot](assets/screenshots/onboard_3.png)
+
+## Get Started Screen
+![Screenshot](assets/screenshots/onboarding_get_started.png)
+
+## Registration Screen
+![Screenshot](assets/screenshots/onboarding_registration.png)
+
+## Verification Screen
+![Screenshot](assets/screenshots/onboarding_verification.png)
+
+## Fingerprint Screen
+![Screenshot](assets/screenshots/onboarding_fingerprint.png)
+
+## Identity Screen
+![Screenshot](assets/screenshots/onboarding_identity.png)
+
+## Welcome Screen
+![Screenshot](assets/screenshots/onboarding_welcome.png)
+
