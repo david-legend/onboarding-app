@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:onboardingapp/routes/router.gr.dart';
 import 'package:onboardingapp/values/values.dart';
 import 'package:onboardingapp/widgets/custom_button.dart';
+import 'package:onboardingapp/widgets/identity_card.dart';
 import 'package:onboardingapp/widgets/spaces.dart';
 
-class FingerprintScreen extends StatefulWidget {
-  @override
-  _FingerprintScreenState createState() => _FingerprintScreenState();
-}
-
-class _FingerprintScreenState extends State<FingerprintScreen> {
+class IdentityScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double marginFromSafeArea = 24;
@@ -24,48 +20,38 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
             children: <Widget>[
               Container(
                 height: heightOfScreen * 0.6,
-                child: _buildFingerPrintVerification(),
+                child: _buildIdentity(context),
               ),
               Container(
-                height: heightOfScreen * 0.4,
+                margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    Image.asset(ImagePath.FINGERPRINT),
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: Sizes.MARGIN_48,
-                      ),
-                      child: CustomButton(
-                        title: StringConst.CONTINUE,
-                        textStyle: textTheme.button,
-                        onPressed: () => Router.navigator
-                            .pushNamed(Routes.identityScreen),
-                      ),
+                    IdentityCard(
+                      number: 1,
+                      title: "National",
+                      body: "Id Or Driver's license For Citizens",
+                      hasRecommended: true,
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: Sizes.MARGIN_12),
-                      child: InkWell(
-                        onTap: () => Router.navigator
-                            .pushNamed(Routes.identityScreen),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              StringConst.SKIP_TEXT,
-                              style: textTheme.subtitle.copyWith(
-                                color: AppColors.violetShade1,
-                              ),
-                            ),
-                            SpaceW8(),
-                            Image.asset(ImagePath.ARROW_FORWARD)
-                          ],
-                        ),
-                      ),
+                    SpaceH16(),
+                    IdentityCard(
+                      number: 2,
+                      title: "Passport",
+                      body: "Required Passport For Non Citizens",
                     ),
                   ],
                 ),
               ),
+              SpaceH16(),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_48),
+                child: CustomButton(
+                  title: StringConst.DONE,
+                  textStyle: textTheme.button,
+                  onPressed: () => Router.navigator
+                      .pushNamed(Routes.onBoardingCompleteScreen),
+                ),
+              ),
+              SpaceH16(),
             ],
           ),
         ),
@@ -73,7 +59,7 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
     );
   }
 
-  Widget _buildFingerPrintVerification() {
+  Widget _buildIdentity(BuildContext context) {
     var widthOfScreen = MediaQuery.of(context).size.width;
     var heightOfScreen = MediaQuery.of(context).size.height - 24;
     var textTheme = Theme.of(context).textTheme;
@@ -92,7 +78,7 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
             child: Column(
               children: <Widget>[
                 Image.asset(
-                  ImagePath.FINGERPRINT_SHIELD,
+                  ImagePath.IDENTITY,
                   width: widthOfScreen,
                   height: heightOfScreen * 0.4,
                 ),
@@ -101,23 +87,18 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                   mainAxis: Axis.vertical,
                   children: <Widget>[
                     Text(
-                      StringConst.FINGERPRINT,
+                      StringConst.IDENTITY,
                       textAlign: TextAlign.center,
                       style: textTheme.headline,
                     ),
                     SpaceH12(),
                     Text(
-                      StringConst.REST_FINGER,
+                      StringConst.VERIFY_IDENTITY,
                       textAlign: TextAlign.center,
                     ),
                     SpaceH12(),
                     Text(
-                      StringConst.CAPTURE_FINGERPRINT,
-                      textAlign: TextAlign.center,
-                    ),
-                    SpaceH12(),
-                    Text(
-                      StringConst.OPTIONAL,
+                      StringConst.REQUIRED,
                       textAlign: TextAlign.center,
                     ),
                   ],

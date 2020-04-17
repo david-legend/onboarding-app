@@ -14,6 +14,8 @@ class ImagePath {
   static const String FINGERPRINT_SHIELD = "$imageDir/fingerprint_shield.png";
   static const String FINGERPRINT = "$imageDir/fingerprint.png";
   static const String ARROW_FORWARD = "$imageDir/arrow-forward.png";
+  static const String IDENTITY = "$imageDir/identity.png";
+  static const String SMILING_ATTENDANT = "$imageDir/smiling_attendant.png";
 
   //SVGs
   static const String USA_FLAG = "$imageDir/usa_flag.svg";

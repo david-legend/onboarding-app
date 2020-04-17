@@ -11,12 +11,16 @@ import 'package:onboardingapp/screens/welcome_screen.dart';
 import 'package:onboardingapp/screens/registration_screen.dart';
 import 'package:onboardingapp/screens/verification_screen.dart';
 import 'package:onboardingapp/screens/fingerprint_screen.dart';
+import 'package:onboardingapp/screens/identity_screen.dart';
+import 'package:onboardingapp/screens/onboarding_complete_screen.dart';
 
 abstract class Routes {
   static const welcomeScreen = '/';
   static const registerScreen = '/register-screen';
   static const verificationScreen = '/verification-screen';
   static const fingerprintScreen = '/fingerprint-screen';
+  static const identityScreen = '/identity-screen';
+  static const onBoardingCompleteScreen = '/on-boarding-complete-screen';
 }
 
 class Router extends RouterBase {
@@ -53,6 +57,16 @@ class Router extends RouterBase {
       case Routes.fingerprintScreen:
         return MaterialPageRoute<dynamic>(
           builder: (_) => FingerprintScreen(),
+          settings: settings,
+        );
+      case Routes.identityScreen:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => IdentityScreen(),
+          settings: settings,
+        );
+      case Routes.onBoardingCompleteScreen:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => OnBoardingCompleteScreen(),
           settings: settings,
         );
       default:

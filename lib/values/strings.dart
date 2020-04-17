@@ -22,19 +22,29 @@ class StringConst {
   static const String CAPTURE_FINGERPRINT = "To Capture Your Fingerorint";
   static const String OPTIONAL = "(Optional)";
 
+  static const String IDENTITY = "Identity";
+  static const String VERIFY_IDENTITY = "We Need To Verify Your Identity";
+  static const String REQUIRED = "(Required)";
+
+  static const String WELCOME = "Welcome";
+  static const String WELCOME_MSG_1 = "Well you have thus come this far!";
+  static const String WELCOME_MSG_2 = "Speak friend and enter or some";
+  static const String LOREM_IPSUM = "lorem ipsum";
+
+  //Button Texts
   static const String CREATE_ACCOUNT = "Create Account";
   static const String LOGIN = "Login";
   static const String GET_CODE = "Get Code";
   static const String VERIFY = "Verify";
   static const String CONTINUE = "Continue";
+  static const String DONE = "Done!";
+  static const String HOORAY = "Hooray!";
 
   static const String SKIP_TEXT = "Skip This Step";
   static const String VALID_PHONE_NUMBER = "Enter a valid phone number";
   static const String PHONE_NUMBER_HINT_TEXT = "Enter your phone number";
 
   static const String RESEND_CODE = "Re-Send Code In 0:";
-
-
 
   //Font Family
   static const String FONT_FAMILY = "Gotham";
