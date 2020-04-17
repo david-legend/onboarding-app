@@ -36,7 +36,7 @@ class IdentityCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+        margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16, vertical: Sizes.MARGIN_16),
         child: Column(
 
           children: <Widget>[
@@ -44,11 +44,11 @@ class IdentityCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  width: 30,
-                  height: 30,
+                  width: Sizes.WIDTH_30,
+                  height: Sizes.HEIGHT_30,
                   decoration: BoxDecoration(
                     color: numberColor,
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
                   ),
                   child: Center(
                     child: Text(
@@ -59,29 +59,21 @@ class IdentityCard extends StatelessWidget {
                 ),
                 SpaceW16(),
                 Container(
-                  margin: EdgeInsets.only(top: 8),
+                  margin: EdgeInsets.only(top: Sizes.MARGIN_8),
                   child: Text(
                     title,
                     style: textTheme.title.copyWith(color: AppColors.black),
                   ),
                 ),
-//                Container(
-//                  child: Column(
-//                    mainAxisAlignment: MainAxisAlignment.end,
-//                    children: <Widget>[
-//
-//                    ],
-//                  ),
-//                ),
                 Spacer(flex: 1),
                 hasRecommended
                     ? Container(
-                        height: 20,
+                        height: Sizes.HEIGHT_20,
                         padding:
                             EdgeInsets.symmetric(horizontal: Sizes.MARGIN_8),
                         decoration: BoxDecoration(
                           color: recommendedColor,
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
                         ),
                         child: Center(
                           child: Text(
@@ -97,7 +89,7 @@ class IdentityCard extends StatelessWidget {
             ),
             SpaceH8(),
             Container(
-              margin: const EdgeInsets.only(left: 46),
+              margin: const EdgeInsets.only(left: Sizes.MARGIN_46),
               child: Row(
                 children: <Widget>[
                   Expanded(

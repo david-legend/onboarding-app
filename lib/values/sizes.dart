@@ -63,6 +63,7 @@ class Sizes {
   static const double HEIGHT_40 = 40.0;
   static const double HEIGHT_36 = 36.0;
   static const double HEIGHT_32 = 32.0;
+  static const double HEIGHT_30 = 30.0;
   static const double HEIGHT_24 = 24.0;
   static const double HEIGHT_22 = 22.0;
   static const double HEIGHT_20 = 20.0;
@@ -84,6 +85,7 @@ class Sizes {
   static const double WIDTH_50 = 50.0;
   static const double WIDTH_40 = 40.0;
   static const double WIDTH_32 = 32.0;
+  static const double WIDTH_30 = 30.0;
   static const double WIDTH_22 = 22.0;
   static const double WIDTH_20 = 20.0;
   static const double WIDTH_18 = 18.0;
@@ -100,8 +102,9 @@ class Sizes {
 
   //Margins
   static const double MARGIN_200 = 200.0;
-  static const double MARGIN_48 = 48.0;
   static const double MARGIN_60 = 60.0;
+  static const double MARGIN_48 = 48.0;
+  static const double MARGIN_46 = 46.0;
   static const double MARGIN_44 = 44.0;
   static const double MARGIN_40 = 40.0;
   static const double MARGIN_32 = 32.0;
