@@ -1,12 +1,18 @@
-
-Built with flutter
-
-## Onboarding App
-
-Beautifully crafted with flutter and love, a useful UI Kit for developers and designers 
+<h1 align="center">
+  Onboarding App
+</h1>
+<h3 align="center">
+  <a href="http://davidcobbina.com" target="_blank">davidcobbina.com</a>
+</h3>
+<p align="center">
+  Beautifully crafted with <strong>flutter</strong> and love, a useful UI Kit for developers and designers 
 who want to kick start their app with a beautiful onboarding screen.
+</p>
 
-Find actual designs at (https://www.behance.net/gallery/87302761/Onboarding-Screens-Free?tracking_source=search_projects_recommended%7COnboarding%20screens%20free)
+<p align="center">
+  Find actual designs at (https://www.behance.net/gallery/87302761/Onboarding-Screens-Free?tracking_source=search_projects_recommended%7COnboarding%20screens%20free)
+</p>
+
 
 ### OnBoarding Initial Screens
 ![Screenshot](assets/screenshots/onboard_1.png)
