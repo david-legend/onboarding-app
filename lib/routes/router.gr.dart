@@ -23,11 +23,11 @@ abstract class Routes {
   static const onBoardingCompleteScreen = '/on-boarding-complete-screen';
 }
 
-class Router extends RouterBase {
+class AppRouter extends RouterBase {
   //This will probably be removed in future versions
   //you should call ExtendedNavigator.ofRouter<Router>() directly
   static ExtendedNavigatorState get navigator =>
-      ExtendedNavigator.ofRouter<Router>();
+      ExtendedNavigator.ofRouter<AppRouter>();
 
   @override
   Route<dynamic> onGenerateRoute(RouteSettings settings) {

@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.welcomeScreen,
       theme: OnBoardingAppThemeData.lightThemeData,
-      onGenerateRoute: Router().onGenerateRoute,
-      builder: ExtendedNavigator<Router>(router: Router()),
+      onGenerateRoute: AppRouter().onGenerateRoute,
+      builder: ExtendedNavigator<AppRouter>(router: AppRouter()),
     );
   }
 }

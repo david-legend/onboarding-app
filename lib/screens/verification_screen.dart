@@ -142,7 +142,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
               ),
               CustomButton(
                 title: StringConst.VERIFY,
-                onPressed: () => Router.navigator.pushNamed(
+                onPressed: () => AppRouter.navigator.pushNamed(
                   Routes.fingerprintScreen,
                 ),
                 textStyle: textTheme.button,

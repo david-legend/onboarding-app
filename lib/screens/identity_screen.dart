@@ -47,7 +47,7 @@ class IdentityScreen extends StatelessWidget {
                 child: CustomButton(
                   title: StringConst.DONE,
                   textStyle: textTheme.button,
-                  onPressed: () => Router.navigator
+                  onPressed: () => AppRouter.navigator
                       .pushNamed(Routes.onBoardingCompleteScreen),
                 ),
               ),

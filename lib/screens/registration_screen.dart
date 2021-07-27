@@ -135,7 +135,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
               CustomButton(
                 title: StringConst.GET_CODE,
-                onPressed: () => Router.navigator.pushNamed(
+                onPressed: () => AppRouter.navigator.pushNamed(
                   Routes.verificationScreen,
                   arguments: VerificationScreenArguments(
                     phoneNumber: this.phoneNumber,

@@ -39,14 +39,14 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                       child: CustomButton(
                         title: StringConst.CONTINUE,
                         textStyle: textTheme.button,
-                        onPressed: () => Router.navigator
+                        onPressed: () => AppRouter.navigator
                             .pushNamed(Routes.identityScreen),
                       ),
                     ),
                     Container(
                       margin: const EdgeInsets.only(bottom: Sizes.MARGIN_12),
                       child: InkWell(
-                        onTap: () => Router.navigator
+                        onTap: () => AppRouter.navigator
                             .pushNamed(Routes.identityScreen),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,

@@ -132,7 +132,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         children: <Widget>[
           CustomButton(
             title: StringConst.CREATE_ACCOUNT,
-            onPressed: () => Router.navigator.pushNamed(Routes.registerScreen),
+            onPressed: () => AppRouter.navigator.pushNamed(Routes.registerScreen),
             textStyle: textTheme.button,
           ),
           SpaceH30(),
@@ -141,7 +141,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             textStyle: textTheme.button.copyWith(color: AppColors.violetShade1),
             color: AppColors.white,
             borderSide: Borders.primaryBorder,
-            onPressed: () => Router.navigator.pushNamed(Routes.registerScreen),
+            onPressed: () => AppRouter.navigator.pushNamed(Routes.registerScreen),
           ),
         ],
       ),

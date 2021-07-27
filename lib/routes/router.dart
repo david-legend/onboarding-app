@@ -7,7 +7,7 @@ import 'package:onboardingapp/screens/verification_screen.dart';
 import 'package:onboardingapp/screens/welcome_screen.dart';
 
 @MaterialAutoRouter()
-class $Router {
+class $AppRouter {
   @initial
   WelcomeScreen welcomeScreen;
 
