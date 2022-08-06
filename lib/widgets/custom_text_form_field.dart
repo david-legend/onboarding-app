@@ -3,15 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:onboardingapp/values/values.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final TextStyle textFormFieldStyle;
-  final TextStyle hintTextStyle;
   final BorderStyle borderStyle;
   final double borderRadius;
   final double borderWidth;
   final double contentPaddingHorizontal;
   final double contentPaddingVertical;
-  final Widget prefixIcon;
-  final Widget suffixIcon;
   final String hintText;
   final String prefixText;
   final Color borderColor;
@@ -22,12 +18,15 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscured;
   final bool hasPrefixIcon;
   final bool hasSuffixIcon;
-  final TextInputType textInputType;
-  ValueChanged<String> onChanged;
   final int maxLength;
-  final bool maxLengthEnforced;
-  FormFieldValidator<String> validator;
-  List<TextInputFormatter> inputFormatters;
+  FormFieldValidator<String>? validator;
+  List<TextInputFormatter>? inputFormatters;
+  final TextStyle? textFormFieldStyle;
+  final TextStyle? hintTextStyle;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
+  final TextInputType? textInputType;
+  ValueChanged<String>? onChanged;
 
   CustomTextFormField({
     this.prefixIcon,
@@ -39,7 +38,7 @@ class CustomTextFormField extends StatelessWidget {
     this.borderWidth = Sizes.WIDTH_0,
     this.contentPaddingHorizontal = Sizes.PADDING_0,
     this.contentPaddingVertical = Sizes.PADDING_12,
-    this.hintText,
+    this.hintText ="",
     this.borderColor = AppColors.violetShade1,
     this.focusedBorderColor = AppColors.violetShade1,
     this.enabledBorderColor = AppColors.violetShade1,
@@ -52,7 +51,6 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.prefixText = "+1",
     this.maxLength = 14,
-    this.maxLengthEnforced = false,
     this.validator,
     this.inputFormatters,
   });
@@ -65,7 +63,6 @@ class CustomTextFormField extends StatelessWidget {
         keyboardType: textInputType,
         onChanged: onChanged,
         maxLength: maxLength,
-        maxLengthEnforced: maxLengthEnforced,
         validator: validator,
         inputFormatters: inputFormatters,
         decoration: InputDecoration(

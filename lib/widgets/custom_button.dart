@@ -3,7 +3,7 @@ import 'package:onboardingapp/values/values.dart';
 
 class CustomButton extends StatelessWidget {
   CustomButton({
-    @required this.title,
+    required this.title,
     this.onPressed,
     this.width = Sizes.WIDTH_150,
     this.height = Sizes.HEIGHT_50,
@@ -14,7 +14,6 @@ class CustomButton extends StatelessWidget {
     this.textStyle,
   });
 
-  final VoidCallback onPressed;
   final double width;
   final double height;
   final double elevation;
@@ -22,7 +21,8 @@ class CustomButton extends StatelessWidget {
   final String title;
   final Color color;
   final BorderSide borderSide;
-  final TextStyle textStyle;
+  final VoidCallback? onPressed;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {

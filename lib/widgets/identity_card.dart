@@ -4,10 +4,10 @@ import 'package:onboardingapp/widgets/spaces.dart';
 
 class IdentityCard extends StatelessWidget {
   IdentityCard({
-    @required this.title,
+    required this.title,
+    required this.number,
+    required this.body,
     this.borderRadius = Sizes.RADIUS_8,
-    this.body,
-    this.number,
     this.recommendedText = "Recommended",
     this.hasRecommended = false,
     this.recommendedColor = AppColors.red,
@@ -53,7 +53,7 @@ class IdentityCard extends StatelessWidget {
                   child: Center(
                     child: Text(
                       number.toString(),
-                      style: textTheme.title.copyWith(color: AppColors.white),
+                      style: textTheme.titleMedium?.copyWith(color: AppColors.white),
                     ),
                   ),
                 ),
@@ -62,7 +62,7 @@ class IdentityCard extends StatelessWidget {
                   margin: EdgeInsets.only(top: Sizes.MARGIN_8),
                   child: Text(
                     title,
-                    style: textTheme.title.copyWith(color: AppColors.black),
+                    style: textTheme.titleMedium?.copyWith(color: AppColors.black),
                   ),
                 ),
                 Spacer(flex: 1),
@@ -78,7 +78,7 @@ class IdentityCard extends StatelessWidget {
                         child: Center(
                           child: Text(
                             recommendedText,
-                            style: textTheme.subtitle.copyWith(
+                            style: textTheme.titleSmall?.copyWith(
                                 color: AppColors.white,
                                 fontSize: Sizes.TEXT_SIZE_10),
                           ),
@@ -95,7 +95,7 @@ class IdentityCard extends StatelessWidget {
                   Expanded(
                     child: Text(
                       body,
-                      style: textTheme.body1,
+                      style: textTheme.bodyMedium,
                     ),
                   ),
                 ],

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:onboardingapp/routes/router.gr.dart';
 import 'package:onboardingapp/values/values.dart';
@@ -8,7 +9,7 @@ import 'package:onboardingapp/widgets/pin_entry_text_field.dart';
 import 'package:onboardingapp/widgets/spaces.dart';
 
 class VerificationScreen extends StatefulWidget {
-  VerificationScreen({@required this.phoneNumber});
+  VerificationScreen({required this.phoneNumber});
 
   final String phoneNumber;
 
@@ -17,8 +18,8 @@ class VerificationScreen extends StatefulWidget {
 }
 
 class _VerificationScreenState extends State<VerificationScreen> {
-  Timer _timer;
-  int _start = 59;
+  late Timer _timer;
+  late int _start = 59;
 
   @override
   void initState() {
@@ -49,7 +50,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
               Center(
                 child: Text(
                   "${StringConst.RESEND_CODE}$_start",
-                  style: textTheme.subtitle.copyWith(
+                  style: textTheme.titleSmall?.copyWith(
                     color: AppColors.violetShade1,
                   ),
                 ),
@@ -92,7 +93,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                     Text(
                       StringConst.VERIFICATION,
                       textAlign: TextAlign.center,
-                      style: textTheme.headline,
+                      style: textTheme.headlineMedium,
                     ),
                     SpaceH12(),
                     Text(
@@ -135,17 +136,15 @@ class _VerificationScreenState extends State<VerificationScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               PinEntryTextField(
-                textStyle: textTheme.title.copyWith(
+                textStyle: textTheme.titleMedium?.copyWith(
                   color: AppColors.blackShade1,
                   fontSize: Sizes.TEXT_SIZE_20,
                 ), // end onSubmit
               ),
               CustomButton(
                 title: StringConst.VERIFY,
-                onPressed: () => AppRouter.navigator.pushNamed(
-                  Routes.fingerprintScreen,
-                ),
-                textStyle: textTheme.button,
+                onPressed: () =>  AutoRouter.of(context).push(FingerprintScreenRoute()),
+                textStyle: textTheme.bodySmall,
               ),
             ],
           ),

@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:onboardingapp/app_theme.dart';
 import 'package:onboardingapp/routes/router.gr.dart';
@@ -6,14 +5,15 @@ import 'package:onboardingapp/routes/router.gr.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  final _appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.welcomeScreen,
       theme: OnBoardingAppThemeData.lightThemeData,
-      onGenerateRoute: AppRouter().onGenerateRoute,
-      builder: ExtendedNavigator<AppRouter>(router: AppRouter()),
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }

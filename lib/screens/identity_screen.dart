@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:onboardingapp/routes/router.gr.dart';
 import 'package:onboardingapp/values/values.dart';
@@ -46,9 +47,10 @@ class IdentityScreen extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_48),
                 child: CustomButton(
                   title: StringConst.DONE,
-                  textStyle: textTheme.button,
-                  onPressed: () => AppRouter.navigator
-                      .pushNamed(Routes.onBoardingCompleteScreen),
+                  textStyle: textTheme.bodySmall,
+                  onPressed: () => AutoRouter.of(context).push(
+                    OnBoardingCompleteScreenRoute(),
+                  ),
                 ),
               ),
               SpaceH16(),
@@ -89,7 +91,7 @@ class IdentityScreen extends StatelessWidget {
                     Text(
                       StringConst.IDENTITY,
                       textAlign: TextAlign.center,
-                      style: textTheme.headline,
+                      style: textTheme.headlineMedium,
                     ),
                     SpaceH12(),
                     Text(

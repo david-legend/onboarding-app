@@ -45,31 +45,31 @@ class OnBoardingAppThemeData {
   static const _light = FontWeight.w300;
 
   static final TextTheme _textTheme = TextTheme(
-    headline: TextStyle(
+    headlineMedium: TextStyle(
       fontFamily: StringConst.FONT_FAMILY,
       fontWeight: _bold,
       fontSize: Sizes.TEXT_SIZE_24,
       fontStyle: FontStyle.normal,
     ),
-    body1: TextStyle(
+    titleMedium: TextStyle(
+      fontFamily: StringConst.FONT_FAMILY,
+      fontWeight: _medium,
+      fontSize: Sizes.TEXT_SIZE_16,
+      fontStyle: FontStyle.normal,
+    ),
+    titleSmall: TextStyle(
+      fontFamily: StringConst.FONT_FAMILY,
+      fontWeight: _medium,
+      fontSize: Sizes.TEXT_SIZE_16,
+      fontStyle: FontStyle.normal,
+    ),
+    bodyMedium: TextStyle(
       fontFamily: StringConst.FONT_FAMILY,
       fontWeight: _light,
       fontSize: Sizes.TEXT_SIZE_16,
       fontStyle: FontStyle.normal,
     ),
-    title: TextStyle(
-      fontFamily: StringConst.FONT_FAMILY,
-      fontWeight: _medium,
-      fontSize: Sizes.TEXT_SIZE_16,
-      fontStyle: FontStyle.normal,
-    ),
-    subtitle: TextStyle(
-      fontFamily: StringConst.FONT_FAMILY,
-      fontWeight: _medium,
-      fontSize: Sizes.TEXT_SIZE_16,
-      fontStyle: FontStyle.normal,
-    ),
-    button: TextStyle(
+    bodySmall: TextStyle(
       fontFamily: StringConst.FONT_FAMILY,
       color: AppColors.whiteShade1,
       fontWeight: _medium,

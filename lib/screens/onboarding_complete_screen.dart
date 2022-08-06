@@ -62,7 +62,7 @@ class OnBoardingCompleteScreen extends StatelessWidget {
                     Text(
                       StringConst.WELCOME,
                       textAlign: TextAlign.center,
-                      style: textTheme.headline,
+                      style: textTheme.headlineMedium,
                     ),
                     SpaceH12(),
                     Text(

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onboardingapp/routes/router.gr.dart';
@@ -71,7 +72,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     Text(
                       StringConst.REGISTRATION,
                       textAlign: TextAlign.center,
-                      style: textTheme.headline,
+                      style: textTheme.headlineMedium,
                     ),
                     SpaceH12(),
                     Text(
@@ -125,7 +126,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 filled: true,
                 validator: _validatePhoneNumber,
                 inputFormatters: <TextInputFormatter>[
-                  WhitelistingTextInputFormatter.digitsOnly,
+                  FilteringTextInputFormatter.digitsOnly,
                   // Fit the validating format.
                   _phoneNumberFormatter,
                 ],
@@ -135,13 +136,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
               CustomButton(
                 title: StringConst.GET_CODE,
-                onPressed: () => AppRouter.navigator.pushNamed(
-                  Routes.verificationScreen,
-                  arguments: VerificationScreenArguments(
+                onPressed: () => AutoRouter.of(context).push(
+                  VerificationScreenRoute(
                     phoneNumber: this.phoneNumber,
                   ),
                 ),
-                textStyle: textTheme.button,
+                textStyle: textTheme.bodySmall,
               ),
             ],
           ),
@@ -163,10 +163,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     }
   }
 
-  String _validatePhoneNumber(String value) {
-    final phoneExp = RegExp(r'^\(\d\d\d\) \d\d\d\-\d\d\d\d$');
-    if (!phoneExp.hasMatch(value)) {
-      return StringConst.VALID_PHONE_NUMBER;
+  String? _validatePhoneNumber(String? value) {
+    if (value != null) {
+      final phoneExp = RegExp(r'^\(\d\d\d\) \d\d\d\-\d\d\d\d$');
+      if (!phoneExp.hasMatch(value)) {
+        return StringConst.VALID_PHONE_NUMBER;
+      }
     }
     return null;
   }

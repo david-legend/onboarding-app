@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:onboardingapp/routes/router.gr.dart';
 import 'package:onboardingapp/values/values.dart';
@@ -38,22 +39,23 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                       ),
                       child: CustomButton(
                         title: StringConst.CONTINUE,
-                        textStyle: textTheme.button,
-                        onPressed: () => AppRouter.navigator
-                            .pushNamed(Routes.identityScreen),
+                        textStyle: textTheme.bodySmall,
+                        onPressed: () => AutoRouter.of(context).push(
+                          IdentityScreenRoute(),
+                        ),
                       ),
                     ),
                     Container(
                       margin: const EdgeInsets.only(bottom: Sizes.MARGIN_12),
                       child: InkWell(
-                        onTap: () => AppRouter.navigator
-                            .pushNamed(Routes.identityScreen),
+                        onTap: () =>
+                            AutoRouter.of(context).push(IdentityScreenRoute()),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
                               StringConst.SKIP_TEXT,
-                              style: textTheme.subtitle.copyWith(
+                              style: textTheme.titleSmall?.copyWith(
                                 color: AppColors.violetShade1,
                               ),
                             ),
@@ -103,7 +105,7 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                     Text(
                       StringConst.FINGERPRINT,
                       textAlign: TextAlign.center,
-                      style: textTheme.headline,
+                      style: textTheme.headlineMedium,
                     ),
                     SpaceH12(),
                     Text(

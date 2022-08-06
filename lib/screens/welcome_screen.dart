@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:onboardingapp/routes/router.gr.dart';
 import 'package:onboardingapp/values/values.dart';
@@ -11,8 +12,8 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  double currentIndexPage;
-  int pageLength;
+  late double currentIndexPage;
+  late int pageLength;
 
   @override
   void initState() {
@@ -67,7 +68,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 
-  Widget _buildWalkThrough({@required String imageUrl}) {
+  Widget _buildWalkThrough({required String imageUrl}) {
     var widthOfScreen = MediaQuery.of(context).size.width;
     var heightOfScreen = MediaQuery.of(context).size.height - 24;
     var textTheme = Theme.of(context).textTheme;
@@ -97,7 +98,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Text(
                       StringConst.STARTED,
                       textAlign: TextAlign.center,
-                      style: textTheme.headline,
+                      style: textTheme.headlineMedium,
                     ),
                     SpaceH8(),
                     Text(
@@ -124,7 +125,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 
-  Widget _buildButtons({@required BuildContext context}) {
+  Widget _buildButtons({required BuildContext context}) {
     var textTheme = Theme.of(context).textTheme;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_48),
@@ -132,16 +133,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         children: <Widget>[
           CustomButton(
             title: StringConst.CREATE_ACCOUNT,
-            onPressed: () => AppRouter.navigator.pushNamed(Routes.registerScreen),
-            textStyle: textTheme.button,
+            onPressed: () => AutoRouter.of(context).push(RegistrationScreenRoute()),
+                // AppRouter.navigator.pushNamed(Routes.registerScreen),
+            textStyle: textTheme.bodySmall,
           ),
           SpaceH30(),
           CustomButton(
             title: StringConst.LOGIN,
-            textStyle: textTheme.button.copyWith(color: AppColors.violetShade1),
+            textStyle: textTheme.bodySmall?.copyWith(color: AppColors.violetShade1),
             color: AppColors.white,
             borderSide: Borders.primaryBorder,
-            onPressed: () => AppRouter.navigator.pushNamed(Routes.registerScreen),
+            onPressed: () => AutoRouter.of(context).push(RegistrationScreenRoute()),
           ),
         ],
       ),
